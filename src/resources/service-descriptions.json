@@ -1,0 +1,42 @@
+{
+    "teflon": {
+        "description": [
+            "Delta's Teflon aka PTFE coating  provides a protective layer that acts as a barrier against environmental hazards like dust, dirt and debris, preventing scratches and dullness on the paintwork.", 
+            "Its water-repellent, non-stick surface repels dirt and grime, and prevents scratches, particularly for cars driven on rough terrain or heavy traffic."
+        ],
+        "description1": [
+            "Delta's Teflon coating adds excellent value to your car’s paintwork from environmental hazards.", 
+            "Delta's Teflon aka PTFE coating  provides a protective layer that acts as a barrier against environmental hazards like dust, dirt and debris, preventing scratches and dullness on the paintwork.", 
+            "It resists UV radiation that can cause paint to fade or peel, making it particularly useful for cars parked outdoors.", 
+            "Its water-repellent, non-stick surface repels dirt and grime, and prevents scratches, particularly for cars driven on rough terrain or heavy traffic.",
+            "With its water-repellent properties, easy-to-clean surface, and resistance to UV rays, Teflon coating offers excellent value"
+        ],
+        "pros": [
+            "Reduce maintenance costs",
+            "Easy to clean",
+            "Scratch resistance",
+            "Better resale value"
+        ]
+    },
+    "ecowash": {
+        "description": [
+            "Our Triple P (Prevent, Preserve, Protect) ecowash non-toxic, biodegradable soap that is free of phosphates, fragrance, chlorine and petroleum-based ingredients preserves the original paint, prevents scratches. It also prevents the corossion of car's undercarriage or underchasis."
+        ],
+        "pros": [
+            "Prevent Scratches - Breakdown dirt and debris from becoming trapped in the brushes, which could cause scratches on the car’s paint.",
+            "Preserve Shine - Eco-friendly car wash products protect the car’s finish, maintain its shine and do not strip away the protective wax coating, which keeps the car looking new for longer.",
+            "Protect from Corossion - Our eco-friendly car wash products do not harm the car’s metal components (underchasis/undercarriage)"
+        ]
+    },
+    "detailing": {
+        "description":[
+            "We at Delta care applied detailed thoughts in selecting products that preserves the asthetics of the car still removing the dirt, debris and odour."
+        ],
+        "pros":[
+            "Extends car's lifespan",
+            "Improve both interior and exterior apperance",
+            "Preserve the original paint",
+            "Extend resale value"
+        ]
+    }
+}
