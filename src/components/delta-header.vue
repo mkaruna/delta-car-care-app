@@ -3,6 +3,11 @@
       <div class="logo-container column">
         <img class="delta-car-care-logo" src="../assets/logo.png" />
       </div>
+      <div class="offer-container column">
+        <div id="offer-div" @click="$emit('my-event')">
+          <span id="offer">Click for Offer</span>
+        </div>
+      </div>
       <div class="address-container column">
         <div class="phone-container row">
           <div class="column">
@@ -29,12 +34,11 @@
             <router-link :to="{path: '/'}" class="home">Home</router-link>
           </li>
           <li class="services">
-            <router-link :to="{path: '/car-care-services'}" class="carservices">Services</router-link>
+            <router-link :to="{path: '/car-care-combos'}" class="carCombos">Combos</router-link>
           </li>
           <li class="contactus">
             <router-link :to="{path: '/contact-us'}" class="contactus">Contact Us</router-link>
           </li>
-          <li class="shop">Shop</li>
         </ul>
       </div>
     </div>
@@ -52,6 +56,14 @@ export default {
         return {
             name: "delta-header",
         };
+    },
+    mounted() {
+      var blink = document.getElementById('offer'); 
+ 
+      setInterval(function () { 
+          blink.style.opacity = 
+          (blink.style.opacity == 0 ? 1 : 0); 
+      }, 1000); 
     },
 }
 </script>
@@ -99,6 +111,23 @@ export default {
       }
       .phone-container {
         align-items: baseline;
+      }
+    }
+    .offer-container {
+      margin-top: 40px;
+      #offer-div {
+        background: #3397EA;
+        width: 70px;
+        height: 50px;
+        border-radius: 45%;
+        text-align: center;
+        #offer { 
+            font-size: 14px; 
+            font-weight: bold; 
+            font-family: sans-serif; 
+            color: red;
+            vertical-align: sub;
+        } 
       }
     }
 

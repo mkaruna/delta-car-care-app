@@ -1,50 +1,23 @@
 <template>
     <div class="app-services-page-container">
-        <div class="header">
-            <delta-header parent-page="services"></delta-header>
-        </div>
         <div class="component-body row">
-            <template v-for="(serviceType, index) in serviceData.list">
-                <div class="service-type-item column">
-                    <div>{{ serviceType.serviceName }}</div>
+            <template v-for="serviceType in serviceData.services" :key="serviceType">
+                <div class="service-items column">
                     <ul class="unordered-list">
-                        <li v-for="(service, index) in serviceType.services" class="service-item">
-                            {{ service }}
+                        <li class="service-item">
+                            {{ serviceType }}
                         </li>
                     </ul>
                 </div>
             </template>
         </div>
-        <div class="footer">
-            <delta-footer></delta-footer>
-        </div>
     </div>
 </template>
 <script>
-import DeltaHeader from "./delta-header.vue";
-import DeltaFooter from "./delta-footer.vue";
 import serviceData from "../resources/services.json";
 
 export default {
     name: "delta-services",
-    components: {
-        DeltaHeader,
-        DeltaFooter,
-    },
-    computed: {
-        serviceTypes() {
-            return {
-                "service": "Select",
-                "carWash": "Car Wash",
-                "polish": "Car Polish",
-                "interior": "Interior Detailing",
-                "teflon": "Teflon Coating",
-                "underChasis": "Under Chasis Coating",
-                "headLight": "Head Light Restoration",
-                "rainRepellent": "Rain Repellent"
-            };
-        },
-    },
     methods: {},
     data() {
         return {
@@ -62,30 +35,21 @@ export default {
     width: 100%;
 
     &.row {
-        display: flex;
-        justify-content: space-around;
-        flex-flow: wrap row;
-        .service-type-item {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .service-items {
             border: white;
-            border-style: groove;
-            margin: 20px 20px 20px 20px;
-            font-size: 18px;
+            font-size: 14px;
             .unordered-list {
-                list-style-type: square;
+                list-style-type: lower-latin;
+                margin: 5px;
             }
-            /* .service-type-item {
-                font-size: 20px;
-                margin-bottom: 10px;
-            } */
             .service-item {
-                margin-bottom: 5px;
+                margin-bottom: 1px;
                 list-style-type: square;
                 font-size: 16px;
             }
-        }
-
-        .column {
-            padding: 20px 20px 20px 20px;
         }
     }
     &.row>* {

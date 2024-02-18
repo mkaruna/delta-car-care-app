@@ -1,72 +1,19 @@
 {
-    "list": [
-        {
-            "serviceName": "Delta Premium - The complete Care",
-            "services": [
-                "Teflon Coating 5 Layers with PTFE (Polytertafluroethylene solvent)",
-                "Eco & Car paint Friendly Foam Wash",
-                "Exterior Rubber Polishing",
-                "Engine Room Cleaning",
-                "Under Chasis Wash",
-                "Tyre Dressing (TAR Removal and Polish",
-                "Tyre Guards Wash/Polish",
-                "Upholstery/Leather Polish",
-                "Interior Vaccum",
-                "Dashboad Cleaning",
-                "Vinyl Dressing [Rubber, Plastic]",
-                "Foot mat cleaning",
-                "Trunk space cleaning",
-                "AC Duct Cleaning"
-            ]
-        },
-        {
-            "serviceName": "Delta Basic",
-            "services": [
-                "Rubbing Polish (All-in-one Polish)",
-                "Eco & Car paint Friendly Foam Wash",
-                "Interior Vaccum",
-                "Dashboad Cleaning",
-                "Foot mat cleaning",
-                "Tyre polish"
-            ]
-        },
-        {
-            "serviceName": "Delta - Interior Enrichment",
-            "services": [
-                "Eco & Car paint Friendly Foam Wash",
-                "Leather/Upholstery Polish",
-                "Interior Vaccum",
-                "Dashboad Cleaning",
-                "Vinyl Dressing [Rubber, Plastic]",
-                "Foot mat cleaning",
-                "Trunk space cleaning",
-                "AC Duct Cleaning"
-            ]
-        },
-        {
-            "serviceName": "Delta - Exterior Enrichment",
-            "services": [
-                "Rubbing Polish (All-in-one Polish)",
-                "Under Chasis Wash",
-                "Exterior Rubber Polishing",
-                "Tyre Dressing (TAR Removal and Polish",
-                "Tyre Guards Wash/Polish"
-            ]
-        },
-        {
-            "serviceName": "Other Essential Services",
-            "services": [
-                "Head Light Restoration",
-                "Winshield Protection",
-                "Underbody Anti Rust Protect",
-                "Silencer Coating",
-                "Chrome Polishing",
-                "Alloy Wheel Polishing",
-                "Rain Repellent Coating",
-                "Rat Repellent",
-                "Odour Elimination"
-
-            ]
-        }
+    "services": [
+        "Teflon Coating 5 Layers with PTFE",
+        "Ceramic Coating",
+        "Organic-Eco Friendly Foam Wash",
+        "Rubber Polishing",
+        "Interior Enrichment",
+        "Under Chasis Coating",
+        "Silencer Coating",
+        "Glass Polishing",
+        "Chrome Polishing",
+        "Headlight Polishing",
+        "Battery Terminal Coating",
+        "Tar Removal",
+        "Rain Repellent",
+        "Rat Repellent",
+        "Odour Removal"
     ]
 }

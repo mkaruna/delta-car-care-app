@@ -2,7 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 
 import Home from "@/components/delta-home.vue"
 import contactUs from "@/components/contact-us.vue"
-import deltaservices from "@/components/delta-services.vue"
+import deltaCombos from "@/components/delta-combo-packages.vue"
 
 const routes = [
   {
@@ -16,9 +16,9 @@ const routes = [
     component: contactUs,
   },
   {
-    path: "/car-care-services",
-    name: "deltaservices",
-    component: deltaservices,
+    path: "/car-care-combos",
+    name: "deltaCombos",
+    component: deltaCombos,
   },
 ]
 
