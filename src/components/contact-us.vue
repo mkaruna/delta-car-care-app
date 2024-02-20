@@ -1,9 +1,10 @@
 <template>
     <div class="contact-us-container">
+        <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfv_61kPaMvA8tXQshBTwGQuZuVFoZfq2JiTljdharEZiL3Q/viewform?embedded=true" width="640" height="959" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
         <form class="text-left" ref="formElement" @submit.prevent="response1">
-            <input name="entry.1166974658"/>
-            <button class="submit">Click for Response</button>
-            <!-- <div class="component-header row">
+            <!-- <input name="entry.1166974658"/>
+            <button class="submit">Click for Response</button> -->
+            <div class="component-header row">
                 <span>
                     Contact Us
                 </span>
@@ -11,12 +12,16 @@
             <div class="component-body row">
                 <div class="contact-us-form row">
                     <div class="contact-us-form-column column">
-                        <div class="service-row row">
-                            <div class="service-text-column text-column column">Select a Service:</div>
-                            <div class="service-input-column column">
-                                <select class="service" v-model="serviceType">
-                                    <option v-for="(key, value) in serviceTypes" :key="key" :id="value">{{ key }}</option>
-                                </select>
+                        <div class="customer-number-row row">
+                            <div class="customer-text-column text-column column">Customer Name:</div>
+                            <div class="customer-input-column column">
+                                <input name="entry.2005620554"/>
+                            </div>
+                        </div>
+                        <div class="mobile-number-row row">
+                            <div class="mobile-number-text-column text-column column">Mobile Number:</div>
+                            <div class="mobile-number-input-column column">
+                                <input name="entry.1166974658"/>
                             </div>
                         </div>
                         <div class="email-row row">
@@ -24,13 +29,15 @@
                                 <label for="email" class="formLabel">Email:</label>
                             </div>
                             <div class="email-input-column column">
-                                <input v-model="email"/>
+                                <input name="entry.1905163202" />
                             </div>
                         </div>
-                        <div class="mobile-number-row row">
-                            <div class="mobile-number-text-column text-column column">Mobile Number:</div>
-                            <div class="mobile-number-input-column column">
-                                <input name="entry.1166974658"/>
+                        <div class="service-row row">
+                            <div class="service-text-column text-column column">Select a Service:</div>
+                            <div class="service-input-column column">
+                                <select class="service" name="entry.444607297">
+                                    <option v-for="(key, value) in serviceTypes" :key="key" :id="value">{{ key }}</option>
+                                </select>
                             </div>
                         </div>
                         <div class="message-row row">
@@ -50,7 +57,7 @@
                     </div>
                 </div>
                 <div class="packages row"></div>
-            </div>-->
+            </div>
         </form>
     </div>
 </template>
@@ -84,12 +91,14 @@ export default {
             console.log(data);
             const t = await fetch(url, {
                 mode: "no-cors",
-                method: "post",
+                method: "POST",
                 headers:{
                         "Content-Type": "application/x-www-form-urlencoded",
                 },
                 body: new URLSearchParams(data).toString(),     
             });
+
+            console.log(t);
             
             if(t) {
                 console.log(t);

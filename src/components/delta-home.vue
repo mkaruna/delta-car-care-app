@@ -2,12 +2,12 @@
   <div class="app-main-page-container">
     <delta-header @my-event="openModal"></delta-header>
     <div class="component-body">
-      <div class="content-services1 row">
+      <div class="content-services row">
         <div class="services-info-container column">
           <delta-services></delta-services>
         </div>
       </div>
-      <div class="content-services row">
+      <div class="content-services-home-page row">
         <div class="service-wash-container column">
           <div class="title">Organic Eco-Friendly Foam Wash</div>
           <img class="wash" src="../assets/car-wash-detailing-station.png" />
@@ -37,7 +37,6 @@
             <img class="delta-car-care-offer" src="../assets/offer-feb-2024.png" />
           </div>
         </dialog>
-        <button id="dialog-open-button" @click="openModal">Show the dialog</button>
       </div>
     </div>
     <delta-footer></delta-footer>
@@ -94,17 +93,19 @@ export default {
   .component-body {
     background-color: #3397ea;
     color: white;
-    .content-services1 {
+    .content-services {
       display: block;
-      .services-info-container {
-        border-style: groove;
+      border-style: groove;
+      .services-info-container { 
         margin-top: 0px;
       }
     }
-    .content-services {
+    .content-services-home-page {
       display: flex;
+      flex-basis: auto;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: space-evenly;
+      border-style: groove;
       .column {
         width: 450px;
       }
@@ -112,12 +113,11 @@ export default {
       .service-polish-container,
       .service-misc-container {
         border: white;
-        border-style: groove;
         img {
-          margin: 5px;
+          padding: 5px;
         }
         .service-description {
-          margin: 5px;
+          margin: 5px 7px 5px 7px;
         }
       }
       .title {
@@ -149,7 +149,7 @@ export default {
       .wash,
       .polish,
       .misc {
-        width: 370px;
+        width: 365px;
         height: 350px;
         margin: 0 auto;
         display: block;

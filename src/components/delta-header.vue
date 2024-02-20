@@ -3,7 +3,7 @@
       <div class="logo-container column">
         <img class="delta-car-care-logo" src="../assets/logo.png" />
       </div>
-      <div class="offer-container column">
+      <div v-if="parentPage!=='contactus'" class="offer-container column">
         <div id="offer-div" @click="$emit('my-event')">
           <span id="offer">Click for Offer</span>
         </div>
@@ -37,7 +37,7 @@
             <router-link :to="{path: '/car-care-combos'}" class="carCombos">Combos</router-link>
           </li>
           <li class="contactus">
-            <router-link :to="{path: '/contact-us'}" class="contactus">Contact Us</router-link>
+            <router-link :to="{path: '/contact-us'}" class="contactus">Book Appointments</router-link>
           </li>
         </ul>
       </div>
@@ -58,12 +58,14 @@ export default {
         };
     },
     mounted() {
-      var blink = document.getElementById('offer'); 
- 
-      setInterval(function () { 
+      if(this.parentPage !== 'contactus') {
+        var blink = document.getElementById('offer'); 
+
+        setInterval(function () { 
           blink.style.opacity = 
-          (blink.style.opacity == 0 ? 1 : 0); 
-      }, 1000); 
+              (blink.style.opacity == 0 ? 1 : 0); 
+        }, 1000); 
+      }
     },
 }
 </script>
@@ -140,6 +142,11 @@ export default {
       background-color: #3397EA;
       margin-right: 8px;
       display: inline-block;
+      .home,
+      .carCombos,
+      .contactus {
+        text-decoration: none;
+      }
     }
     .phone-call-icon {
       width: 48px;

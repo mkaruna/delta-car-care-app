@@ -1,5 +1,8 @@
 <template>
     <div class="app-services-page-container">
+        <div class="component-header">
+            <div class="service-title">Our Services</div>
+        </div>
         <div class="component-body row">
             <template v-for="serviceType in serviceData.services" :key="serviceType">
                 <div class="service-items column">
@@ -29,6 +32,15 @@ export default {
 }
 </script>
 <style scoped>
+
+.component-header {
+    .service-title {
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
 .component-body {
     background-color: #3397ea;
     color: white;

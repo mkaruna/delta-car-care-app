@@ -39,10 +39,10 @@
       <div class="contact-us-container column">
         <div class="connect-us header-text">Connect</div>
         <div class="connect-social">
-          <i class="facebook-icon" onclick="open()"></i>
+          <i class="facebook-icon" @click="open('FB')"></i>
           <!-- <i class="facebook-icon" href="https://www.facebook.com/deltacarcare2024?mibextid=LQQJ4d" target="_blank"></i> -->
           <i class="twitter-icon"></i>
-          <i class="instagram-icon"></i>
+          <i class="instagram-icon" @click="open('Insta')"></i>
           <i class="youtube-icon"></i>
         </div>
       </div>
@@ -59,8 +59,12 @@ export default {
     },
 
     methods: {
-      open() {
-        window.open("https://www.facebook.com/deltacarcare2024?mibextid=LQQJ4d", "_blank", "noreferrer");
+      open(socailMediaHandle) {
+        let url = "https://www.facebook.com/deltacarcare2024?mibextid=LQQJ4d";
+        if(socailMediaHandle === "Insta") {
+          url = "https://www.instagram.com/deltacarcaretnj/?igsh=NnQ2aHk1ZHl5NWxv";
+        }
+        window.open(url);
       }
     },
 

@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 
 import Home from "@/components/delta-home.vue"
-import contactUs from "@/components/contact-us.vue"
+import contactUs from "@/components/contact-us1.vue"
 import deltaCombos from "@/components/delta-combo-packages.vue"
 
 const routes = [
