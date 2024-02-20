@@ -19,10 +19,10 @@
             <div class="content-services-dialog row">
                 <div class="column">
                     <dialog id="promotion-dialog">
-                    <div>
-                        <button autofocus id="dialog-close-button" @click="closeModal">Close</button>
-                        <img class="delta-car-care-offer" src="../assets/offer-feb-2024.png" />
-                    </div>
+                        <div>
+                            <button autofocus id="dialog-close-button" @click="closeModal">Close</button>
+                            <img class="delta-car-care-offer" src="../assets/offer-feb-2024.png" />
+                        </div>
                     </dialog>
                 </div>
             </div>
@@ -97,18 +97,27 @@ export default {
             .column {
                 padding: 20px 20px 20px 20px;
             }
-            .content-services-dialog {
-                #dialog-close-button {
-                    float: right;
-                }
-                .delta-car-care-offer {
-                    width: 600px;
-                    height: 600px;
-                }
-            }
         }
         .row>* {
             flex: 1 1 250px;
+        }
+        .content-services-dialog {
+            #dialog-close-button {
+                float: right;
+                list-style: none;
+                border: 2px solid #000435 !important;
+                border-radius: 20px;
+                padding: 5px 15px 5px 15px;
+                line-height: 15px;
+                background-color: #3397EA;
+                margin-right: 8px;
+                display: inline-block;
+                color: white;
+            }
+            .delta-car-care-offer {
+                width: 600px;
+                height: 600px;
+            }
         }
     }
     @container (max-width: 400px) {
@@ -117,6 +126,15 @@ export default {
                 &.content-services-dialog {
                     #dialog-close-button {
                         float: right;
+                        list-style: none;
+                        border: 2px solid #000435 !important;
+                        border-radius: 20px;
+                        padding: 5px 15px 5px 15px;
+                        line-height: 15px;
+                        background-color: #3397EA;
+                        margin-right: 8px;
+                        display: inline-block;
+                        color: white;
                     }
                     .delta-car-care-offer {
                         width: 300px;

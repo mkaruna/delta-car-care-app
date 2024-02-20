@@ -137,6 +137,15 @@ export default {
     .content-services-dialog {
       #dialog-close-button {
         float: right;
+        list-style: none;
+        border: 2px solid #000435 !important;
+        border-radius: 20px;
+        padding: 5px 15px 5px 15px;
+        line-height: 15px;
+        background-color: #3397EA;
+        margin-right: 8px;
+        display: inline-block;
+        color: white;
       }
       .delta-car-care-offer {
         width: 500px;
