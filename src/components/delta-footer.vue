@@ -43,7 +43,7 @@
           <!-- <i class="facebook-icon" href="https://www.facebook.com/deltacarcare2024?mibextid=LQQJ4d" target="_blank"></i> -->
           <i class="twitter-icon"></i>
           <i class="instagram-icon" @click="open('Insta')"></i>
-          <i class="youtube-icon"></i>
+          <i class="youtube-icon" @click="open('Youtube')"></i>
         </div>
       </div>
     </div>
@@ -63,6 +63,8 @@ export default {
         let url = "https://www.facebook.com/deltacarcare2024?mibextid=LQQJ4d";
         if(socailMediaHandle === "Insta") {
           url = "https://www.instagram.com/deltacarcaretnj/?igsh=NnQ2aHk1ZHl5NWxv";
+        } else if(socailMediaHandle === "Youtube") {
+          url = "https://www.youtube.com/channel/UChIXfJccb9csWRBRpwa7Y_g";
         }
         window.open(url);
       }
@@ -120,6 +122,9 @@ export default {
         height: 48px;
         border: none;
         background: url("../assets/facebook-icon.svg") no-repeat 0 0;
+        &:hover {
+          cursor: hand;
+        }
       }
       .twitter-icon {
         width: 48px;

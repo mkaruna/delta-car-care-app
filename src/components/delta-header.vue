@@ -13,8 +13,10 @@
           <div class="column">
             <img class="phone-call-icon" src="../assets/phone-call-3.png" />
           </div>
-          <div class="column">
-            <span class="phone-number">81110 99669</span>
+          <div class="column-spec">
+            <ul class="telephone-ul">
+              <li><a href="tel:+91-81110 99669" class="phone-number">81110 99669</a></li>
+            </ul>
           </div>
         </div>
         <div class="location-container row">
@@ -25,6 +27,11 @@
             <p class="phone-number">Manakarambai-Thiruvayaru Roundaanaa</p>
             <p class="phone-number">Trichy By-Pass Road, Palliagraharam</p>
             <p class="phone-number">Thanjavur, Tamilnadu - 613003</p>
+            <ul class="directions-ul">
+              <li>
+                <a class="phone-number" href="https://www.google.com/maps/place/Delta+Car+Care+-+Car+Wash+in+Thanjavur+%7C+Car+Detailing+(Interior%2FExterior+Cleaning)+%7C+Car+Polish/@10.8281488,79.127246,17z/data=!3m1!4b1!4m6!3m5!1s0x3baac700159ad561:0xd0000ec250a922bf!8m2!3d10.8281488!4d79.1298209!16s%2Fg%2F11vpv2gzch?entry=ttu" target="_blank">Get Directions</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -58,6 +65,7 @@ export default {
         };
     },
     mounted() {
+      // 47CFE5DE
       if(this.parentPage !== 'contactus') {
         var blink = document.getElementById('offer'); 
 
@@ -148,6 +156,23 @@ export default {
         text-decoration: none;
       }
     }
+    .telephone-ul,
+    .directions-ul  {
+      padding-left: 0px;
+      li {
+        width: fit-content;
+        list-style: none;
+        border: 2px solid #00a5e5 !important;
+        border-radius: 20px;
+        padding: 5px 15px 5px 15px;
+        line-height: 15px;
+        background-color: #3397EA;
+        margin-right: 8px;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
     .phone-call-icon {
       width: 48px;
       height: 48px;
@@ -162,6 +187,7 @@ export default {
     }
     .phone-number {
       margin: 0 0 5px 0;
+      color: white;
     }
 
     @media screen and (max-width: 400px) {
@@ -174,6 +200,10 @@ export default {
       .primary-nav {
         padding-left: 0px;
         padding-top: 10px;
+      }
+      .contactus {
+        text-decoration: none;
+        margin-top: 10px;
       }
     }
   }

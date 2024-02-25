@@ -5,14 +5,17 @@
         </div>
         <div class="component-body row">
             <div class="customer-details column">
-                <form class="text-left" ref="formElement" @submit.prevent="response1">
+                <form class="text-left" ref="formElement" @submit.prevent="response">
+                    <div class="response">
+                        <span>{{ this.message }}</span>
+                    </div>
                     <div class="row customer-name">
                         <div class="label column">
                             <label class="formLabel">Contact Name:</label>
                         </div>
                         <div class="column">
-                            <input id="name" maxlength="80" name="entry.2005620554" size="20" type="text" class="form-control"
-                                placeholder="Enter Name">
+                            <input id="name" maxlength="80" name="entry.2010657061" size="20" type="text" class="form-control"
+                                placeholder="* Enter Name">
                         </div>
                     </div>
                     <div class="row phone">
@@ -20,8 +23,8 @@
                             <label class="formLabel">Phone:</label>
                         </div>
                         <div class="column">
-                            <input id="phone" maxlength="40" name="entry.1166974658" size="20" type="text" class="form-control"
-                                placeholder="Phone Number">
+                            <input id="phone" maxlength="40" name="entry.1943661662" size="20" type="text" class="form-control"
+                                placeholder="* Phone Number">
                         </div>
                     </div>
                     <div class="row service-type">
@@ -29,7 +32,7 @@
                             <label class="formLabel">Select a Service:</label>
                         </div>
                         <div class="column">
-                            <select id="service" class="service" name="entry.444607297" placeholder="Select service">
+                            <select id="service" class="service" name="entry.61576913" placeholder="Select service">
                                 <option id="" disabled selected>Select Service</option>
                                 <option v-for="(key, value) in serviceTypes" :key="key" :id="value">{{ key }}</option>
                             </select>
@@ -40,7 +43,7 @@
                             <label class="formLabel">Email:</label>
                         </div>
                         <div class="column">
-                            <input id="email" maxlength="80" name="entry.1905163202" size="20" type="text" class="form-control"
+                            <input id="email" maxlength="80" name="entry.1825752796" size="20" type="text" class="form-control"
                                 placeholder="Email Address">
                         </div>
                     </div>
@@ -49,13 +52,13 @@
                             <label class="formLabel">Message:</label>
                         </div>
                         <div class="column">
-                            <input id="message" maxlength="40" name="entry.839337160" size="20" type="textarea" class="form-control"
+                            <input id="message" maxlength="40" name="entry.1520951538" size="20" type="textarea" class="form-control"
                                 placeholder="Your message here">
                         </div>
                     </div>
                     <div class="row controls">
                         <div class="column">
-                            <button class="submit">Contact US</button>
+                            <button class="submit">Book Appointment</button>
                         </div>
                     </div>
                 </form>
@@ -76,7 +79,6 @@ import DeltaHeader from "./delta-header.vue";
 import DeltaFooter from "./delta-footer.vue";
 import DeltaServices from "./delta-services.vue";
 import serviceData from "../resources/services.json";
-import { CourierClient } from "@trycourier/courier";
 
 export default {
     name: "contact-us",
@@ -89,32 +91,49 @@ export default {
         serviceTypes() {
             return {
                 "service": "Select",
-                "carWash": "Car Wash",
-                "polish": "Car Polish",
-                "interior": "Interior Detailing",
                 "teflon": "Teflon Coating",
-                "underChasis": "Under Chasis Coating",
+                "ceramic": "Ceramic Coating",
+                "carWash": "Eco-Foam Car Wash",
+                "interior": "Interior Detailing",
+                "underChasis": "Under Chassis Coating",
+                "silencerCoating": "Silencer Coating",
+                "polish": "Rubbing Polish",
+                "rainRepellent": "Rain Repellent",
+                "batteryTerminalCoating": "Battery Terminal Coating",
+                "chromePolish": "Chrome Polish",
                 "headLight": "Head Light Restoration",
-                "rainRepellent": "Rain Repellent"
             };
         },
     },
     methods: {
-        async response1() {
+        async response() {
             const url =
-                "https://docs.google.com/forms/d/e/1FAIpQLSdfv_61kPaMvA8tXQshBTwGQuZuVFoZfq2JiTljdharEZiL3Q/formResponse";
+                "https://docs.google.com/forms/d/e/1FAIpQLSfCqQmX-5p2gBl-T533W2EA_on7-AxH85-Hygb7LIgFLJZ9Vg/formResponse";
             var vm = this;
             var formElement = vm.$refs.formElement;
             var formData = new FormData(formElement);
             var data = {};
-            console.log(formElement);
+
             for (var pair of formData.entries()) {
-                console.log(pair[0] + ", " + pair[1]);
-                // data[pair[0]] = pair[1];
+                data[pair[0]] = pair[1];
             }
-            data["entry.2005620554"] = "Manimaran K";
-            data["entry.1166974658"] = "3125092223";
-            console.log(data);
+
+            const bookingDate = new Date();
+            data["entry.700899599"] = `DEL${bookingDate.getMonth() + 1}${bookingDate.getDate()}${bookingDate.getFullYear()}${bookingDate.getMilliseconds()}`
+
+            if(data["entry.2010657061"] === "" && data["entry.1943661662"] === "") {
+                this.message = "* Please Enter Name and Phone number to successfully book an appointment";
+                return;
+            }
+            if(data["entry.1943661662"] === "") {
+                this.message = "* Please Enter Name to successfully book an appointment";
+                return;
+            }
+            if(data["entry.2010657061"] === "") {
+                this.message = "* Please Enter Phone number to successfully book an appointment";
+                return;
+            }
+
             const t = await fetch(url, {
                 mode: "no-cors",
                 method: "POST",
@@ -123,38 +142,15 @@ export default {
                 },
                 body: new URLSearchParams(data).toString(),     
             });
-
-            console.log(t);
             
             if(t) {
-                console.log(t);
+                this.apiResponse = true;
+                this.message = "Thank you for your appointment! Team Delta represntative will call you with appointment details.";
             } else {
-                console.log(`in catch`);
+                this.apiResponse = false;
+                this.message = "OOPS! Something went wrong. Please try booking again."
             };
-        },
-        async contactUs() {
-            console.log(`Contact us   ${this.serviceType}`);
-            const courier = new CourierClient({ authorizationToken: "N2NiNGQ1NDAtYzVlOS00OTYzLWFmMTYtNDQ1NTUxYTIxOGI4"});
-
-            const { requestId } = await courier.send({
-                message: {
-                    to: {
-                    email: "kmanimaran2k3@gmail.com",
-                    },
-                    content: {
-                    title: "Welcome!",
-                    body: "Thanks for signing up, {{name}}",
-                    },
-                    data: {
-                    name: "Manimaran Karunanithi",
-                    },
-                    routing: {
-                    method: "single",
-                    channels: ["email"],
-                    },
-                },
-            });
-        },    
+        },  
     },
     data() {
         return {
@@ -164,7 +160,8 @@ export default {
             customerName: null,
             email: null,
             phone:null,
-            message: null
+            message: null,
+            apiResponse: false,
         };
     },
 
@@ -226,6 +223,9 @@ export default {
 
                     }
                 }
+                .response {
+                    font-size: 16px;
+                }
             }
             .content-services {
                 width: 600px;
@@ -268,6 +268,10 @@ export default {
                     &.controls {
                         text-align: right;
 
+                    }
+                    &.email,
+                    &.message-us {
+                        display: none;
                     }
                 }
                 .label {
