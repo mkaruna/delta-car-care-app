@@ -3,7 +3,7 @@
       <div class="logo-container column">
         <img class="delta-car-care-logo" src="../assets/logo.png" />
       </div>
-      <div v-if="parentPage!=='contactus'" class="offer-container column">
+      <div v-if="showOffer && parentPage!=='contactus'" class="offer-container column">
         <div id="offer-div" @click="$emit('my-event')">
           <span id="offer">Click for Offer</span>
         </div>
@@ -40,6 +40,9 @@
           <li v-if="this.parentPage !== 'home'" class="home">
             <router-link :to="{path: '/'}" class="home">Home</router-link>
           </li>
+          <li class="gallery">
+            <router-link :to="{path: '/gallery'}" class="gallery">Our Work</router-link>
+          </li>
           <li class="services">
             <router-link :to="{path: '/car-care-combos'}" class="carCombos">Combos</router-link>
           </li>
@@ -62,6 +65,7 @@ export default {
     data() {
         return {
             name: "delta-header",
+            showOffer: false,
         };
     },
     mounted() {
@@ -151,9 +155,11 @@ export default {
       margin-right: 8px;
       display: inline-block;
       .home,
+      .gallery,
       .carCombos,
       .contactus {
         text-decoration: none;
+        color: white;
       }
     }
     .telephone-ul,
