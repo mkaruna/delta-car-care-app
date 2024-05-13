@@ -32,9 +32,11 @@
       </div>
       <div class="content-services-dialog row">
         <dialog id="promotion-dialog">
+          <div class="btn-container">
+              <button autofocus id="dialog-close-button" @click="closeModal">Close</button>
+          </div>
           <div>
-            <button autofocus id="dialog-close-button" @click="closeModal">Close</button>
-            <img class="delta-car-care-offer" src="../assets/offer-feb-2024.png" />
+              <img class="delta-car-care-offer" src="../assets/offer-may-2024.png" />
           </div>
         </dialog>
       </div>
@@ -146,6 +148,7 @@ export default {
         margin-right: 8px;
         display: inline-block;
         color: white;
+        margin-bottom: 20px;
       }
       .delta-car-care-offer {
         width: 500px;
@@ -180,7 +183,7 @@ export default {
     }
   }
 }
-::backdrop {
+/* ::backdrop {
   background-image: linear-gradient(
     45deg,
     magenta,
@@ -189,5 +192,5 @@ export default {
     green
   );
   opacity: 0.75;
-}
+} */
 </style>

@@ -19,9 +19,11 @@
             <div class="content-services-dialog row">
                 <div class="column">
                     <dialog id="promotion-dialog">
-                        <div>
+                        <div class="btn-container">
                             <button autofocus id="dialog-close-button" @click="closeModal">Close</button>
-                            <img class="delta-car-care-offer" src="../assets/offer-feb-2024.png" />
+                        </div>
+                        <div>
+                            <img class="delta-car-care-offer" src="../assets/summer-offer-2024.png" />
                         </div>
                     </dialog>
                 </div>
@@ -113,6 +115,7 @@ export default {
                 margin-right: 8px;
                 display: inline-block;
                 color: white;
+                margin-bottom: 20px;
             }
             .delta-car-care-offer {
                 width: 600px;

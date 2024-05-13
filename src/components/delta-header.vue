@@ -65,7 +65,7 @@ export default {
     data() {
         return {
             name: "delta-header",
-            showOffer: false,
+            showOffer: true,
         };
     },
     mounted() {
